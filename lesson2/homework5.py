@@ -8,3 +8,26 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
+
+num = input("Enter number: ")
+my_list = [7, 5, 3, 3, 2]
+
+
+if num.isdigit():
+    num = int(num)
+    # print(num)
+    i = 0
+    insert = False
+    print(f"Previos:  {my_list}")
+    for element in my_list:
+        if num > element:
+            my_list.insert(i, num)
+            insert = True
+            break
+        i += 1
+    if insert == False:
+        my_list.append(num)
+
+    print(f"Now:      {my_list}")
+else:
+    print("It is not digit")
